@@ -7,6 +7,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcryptjs")
 
 const mongoDb = "mongodb+srv://cat:ab5itC4sQTvU8Qpo@learnauth.p9ndxad.mongodb.net/";
 mongoose.connect(mongoDb);
