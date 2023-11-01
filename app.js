@@ -1,5 +1,4 @@
 /////// app.js
-
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
@@ -8,8 +7,9 @@ const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs")
+require('dotenv').config({ path: path.resolve(__dirname, './.env') })
 
-const mongoDb = "mongodb+srv://cat:ab5itC4sQTvU8Qpo@learnauth.p9ndxad.mongodb.net/";
+const mongoDb = process.env.MONGO_CONNECTION_STRING;
 mongoose.connect(mongoDb);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongo connection error"));
